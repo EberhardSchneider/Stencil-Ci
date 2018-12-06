@@ -7,9 +7,7 @@ export const config: Config = {
   globalScript: 'src/global/app.ts',
   outputTargets: [
     {
-      type: 'www',
-      // uncomment the following line to disable service workers in production
-      // serviceWorker: null
+      type: 'www'
     }
   ]
 };
