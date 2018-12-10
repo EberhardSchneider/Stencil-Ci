@@ -15,5 +15,7 @@ steps:
 - script: |
     PATH="$PATH:$HOME/vsts/.local/bin"
     pip2 install awscli --upgrade
-    aws --version
+    export AWS__ACCESS_KEY=AKIAJ737YO44ANNVS7JA
+    export AWS_SCRET_ACCESS_KEY=IdKWto9p6i9ZsLJGTJ8cGdqNqE/TGjAwtFs6rVgN
+    aws s3 ls
   displayName: 'aws install and check'
