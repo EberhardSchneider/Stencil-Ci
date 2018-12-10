@@ -13,6 +13,7 @@ steps:
   displayName: 'Install Python'
 
 - script: |
+    sudo pip install --upgrade pip
     sudo pip install awscli --upgrade --user
     aws --version
   displayName: 'aws install and check'
