@@ -14,5 +14,5 @@ steps:
 
 - script: |
     sudo pip install awscli --upgrade --user
-    ls
+    aws --version
   displayName: 'aws install and check'
