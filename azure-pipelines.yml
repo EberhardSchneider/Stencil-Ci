@@ -7,13 +7,12 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- task: NodeTool@0
+- task: UsePythonVersion@0
   inputs:
-    versionSpec: '8.x'
-  displayName: 'Install Node.js'
+    versionSpec: '2.x'
+  displayName: 'Install Python'
 
 - script: |
-    npm install
-    npm run test
-    npm run build
-  displayName: 'npm install and build'
+    pip install awscli --upgrade --user
+    aws --version
+  displayName: 'aws install and check'
