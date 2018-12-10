@@ -13,6 +13,7 @@ steps:
   displayName: 'Install Python'
 
 - script: |
+    PATH="$PATH:$HOME/vsts/.local/bin"
     pip2 install awscli --upgrade
     aws --version
   displayName: 'aws install and check'
