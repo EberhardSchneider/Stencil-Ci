@@ -16,6 +16,14 @@ steps:
   displayName: 'Install Python'
 
 - script: |
+    npm run build
+  displayName: 'build'
+
+- script: |
+    npm run test
+  displayName: 'run tests'
+
+- script: |
     PATH="$PATH:$HOME/vsts/.local/bin"
     pip2 install awscli --upgrade
     aws configure set aws_access_key_id $(ACCESS_KEY_ID)
