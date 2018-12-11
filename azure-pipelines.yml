@@ -16,6 +16,10 @@ steps:
   displayName: 'Install Python'
 
 - script: |
+    npm i
+  displayName: 'npm install'
+
+- script: |
     npm run build
   displayName: 'build'
 
