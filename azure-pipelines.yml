@@ -36,4 +36,5 @@ steps:
     aws configure set aws_access_key_id $(ACCESS_KEY_ID)
     aws configure set aws_secret_access_key $(SECRET_ACCESS_KEY)
     aws s3 sync ./www/ s3://eberhardtest
-  displayName: 'aws install and check'
+    aws s3 cp ./www/ s3://eberhardtest/ --recursive --exclude "*" --include "*.js" --content-type "application/javascript"
+  displayName: 'aws install and sync'
