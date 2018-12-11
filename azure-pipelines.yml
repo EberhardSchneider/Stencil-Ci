@@ -6,6 +6,9 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+variables:
+- group: AWS-Credentials
+
 steps:
 - task: UsePythonVersion@0
   inputs:
@@ -15,6 +18,7 @@ steps:
 - script: |
     PATH="$PATH:$HOME/vsts/.local/bin"
     pip2 install awscli --upgrade
-    aws configure set IdKWto9p6i9ZsLJGTJ8cGdqNqE/TGjAwtFs6rVgN AKIAJ737YO44ANNVS7JA
+    aws configure set aws_access_key_id ${ACCESS_KEY_ID}
+    aws configure set aws_secret_acces_key ${SECRET_ACCESS_KEY}
     aws s3 ls
   displayName: 'aws install and check'
