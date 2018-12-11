@@ -15,17 +15,20 @@ steps:
     versionSpec: '2.x'
   displayName: 'Install Python'
 
-- script: |
-    npm i
-  displayName: 'npm install'
+- task: NodeTool@0
+  inputs:
+    versionSpec: 10.x
+
+- script: npm install
+  displayName: 'Npm Install'
 
 - script: |
     npm run build
-  displayName: 'build'
+  displayName: 'Stencil Build'
 
 - script: |
     npm run test
-  displayName: 'run tests'
+  displayName: 'Run Stencil Tests'
 
 - script: |
     PATH="$PATH:$HOME/vsts/.local/bin"
